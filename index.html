@@ -42,6 +42,7 @@
   </script>
 </head>
 <body>
+  <button class="terminal-switch" id="terminalSwitch" type="button" aria-controls="terminalOverlay" aria-expanded="false">Shift to Terminal</button>
   <main class="wrapper">
     <section class="hero" aria-labelledby="intro-title">
       <div class="profile-section">
@@ -73,6 +74,7 @@
               <option value="developer">aryan.dev/api/user/profile</option>
               <option value="skills">aryan.dev/api/user/skills</option>
               <option value="projects">aryan.dev/api/user/projects</option>
+              <option value="experience">aryan.dev/api/user/experience</option>
             </select>
             <button class="copy-icon-btn" id="copyBtn" title="Copy endpoint" aria-label="Copy endpoint">
               <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
@@ -141,6 +143,39 @@
       </article>
     </section>
 
+    <section class="experience-wrapper" aria-labelledby="experience-title">
+      <h2 class="section-title" id="experience-title"><span>~/</span> experience.ts</h2>
+      <div class="timeline" aria-label="Professional experience timeline">
+        <article class="timeline-item">
+          <div class="timeline-date">Oct 2025 - Present</div>
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <p class="timeline-kicker">Software Engineering Intern</p>
+            <h3>E-Governance Cell, Parul University</h3>
+            <p>Architecting GateLogger backend workflows with TypeScript, Node.js, and PostgreSQL for visitor and vehicle management across campus operations.</p>
+            <ul>
+              <li>Built request-based approvals and RBAC to reduce manual administrative effort by 60%.</li>
+              <li>Developed type-safe APIs, validation pipelines, and database integrations for reliable internal systems.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-date">Mar 2026 - May 2026</div>
+          <div class="timeline-node" aria-hidden="true"></div>
+          <div class="timeline-card">
+            <p class="timeline-kicker">Backend Developer Intern</p>
+            <h3>mavens.dev</h3>
+            <p>Designed backend services for real-time order processing and billing workflows in a production POS platform.</p>
+            <ul>
+              <li>Shipped REST APIs using TypeScript, Node.js, Prisma ORM, and PostgreSQL.</li>
+              <li>Modeled relational schemas with ACID-aware transaction flows and cleaner database access patterns.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section class="contact-wrapper" aria-labelledby="contact-title">
       <h2 class="section-title" id="contact-title"><span>~/</span> contact.js</h2>
       <div class="contact-form-container">
@@ -161,6 +196,21 @@
       </div>
     </section>
   </main>
+  <section class="terminal-overlay" id="terminalOverlay" aria-label="Terminal portfolio" aria-hidden="true">
+    <div class="terminal-shell">
+      <div class="window-controls terminal-titlebar">
+        <button class="dot red terminal-close-dot" id="terminalClose" type="button" aria-label="Exit terminal"></button><span class="dot yellow"></span><span class="dot green"></span>
+        <span class="terminal-title">aryan@portfolio:~</span>
+      </div>
+      <div class="terminal-screen" id="terminalScreen">
+        <div class="terminal-output" id="terminalOutput" aria-live="polite"></div>
+        <form class="terminal-input-line" id="terminalForm">
+          <span class="terminal-prompt">aryan@portfolio:~$</span>
+          <input class="terminal-input" id="terminalInput" type="text" autocomplete="off" autocapitalize="none" spellcheck="false" aria-label="Terminal command">
+        </form>
+      </div>
+    </div>
+  </section>
   <script src="script.js"></script>
 </body>
 </html>
